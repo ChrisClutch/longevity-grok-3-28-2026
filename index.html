@@ -1,252 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kick Death in the Teeth</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEATH JUST GOT PUNCHED IN THE NUTS</title>
+    <meta property="og:title" content="DEATH JUST GOT PUNCHED IN THE NUTS">
+    <meta property="og:description" content="The no-BS protocol that actually reverses aging. Real data. Real gains. Zero fluff.">
+    <meta property="og:image" content="https://source.unsplash.com/random/1200x630/?fighter">
+    <meta property="og:url" content="https://yourdomain.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap">
+    <style>
+        :root {
+            --blue: #0a2540;
+            --green: #00cc88;
+            --accent: #ff2e63;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #0a0f1c;
+            color: #e0f2ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2 { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* HERO */
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            background: linear-gradient(rgba(10,15,28,0.75), rgba(10,15,28,0.9)), url('https://source.unsplash.com/random/2000x1200/?fighter,boxing,shadow') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero-content {
+            max-width: 420px;
+            padding: 0 24px;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            line-height: 1.05;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: white;
+        }
+        .hero p {
+            font-size: 1.35rem;
+            color: #a0f0d0;
+            margin-bottom: 32px;
+        }
+        .cta-btn {
+            background: var(--accent);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255,46,99,0.4);
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(255,46,99,0.6); }
 
-<!-- Open Graph -->
-<meta property="og:title" content="Kick Death in the Teeth">
-<meta property="og:description" content="The no-BS guide to adding years to your life — backed by real data.">
-<meta property="og:image" content="https://source.unsplash.com/1200x630/?strong,man,fitness">
-<meta property="og:type" content="website">
+        /* STATS BAR */
+        .stats-bar {
+            background: rgba(10,37,64,0.95);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            overflow-x: auto;
+            gap: 24px;
+            scrollbar-width: none;
+        }
+        .stat {
+            text-align: center;
+            min-width: 120px;
+        }
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--green);
+        }
 
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+        section {
+            padding: 80px 24px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 32px;
+            text-align: center;
+        }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+        /* CARDS */
+        .card-grid {
+            display: grid;
+            gap: 24px;
+        }
+        .card {
+            background: #112233;
+            border-radius: 20px;
+            padding: 28px;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-8px); }
+        .card h3 { color: var(--green); font-size: 1.5rem; margin-bottom: 12px; }
+        .badge {
+            background: var(--accent);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Inter',sans-serif;
-  background:#0f172a;
-  color:#e2e8f0;
-  line-height:1.6;
-}
-section{
-  padding:60px 20px;
-  max-width:900px;
-  margin:auto;
-}
-h1,h2,h3{font-weight:800;}
-h1{font-size:2.4rem;line-height:1.2;}
-h2{font-size:1.6rem;margin-bottom:10px;}
-p{opacity:.9;margin-bottom:10px;}
-.hero{
-  background:url('https://source.unsplash.com/800x1200/?strong,man,outdoors') center/cover no-repeat;
-  text-align:center;
-  padding:120px 20px;
-}
-.hero h1{
-  font-size:2.6rem;
-  color:#fff;
-  text-shadow:0 4px 20px rgba(0,0,0,.6);
-}
-.hero p{
-  margin-top:15px;
-  font-size:1.1rem;
-}
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  margin-top:20px;
-}
-.card{
-  background:#1e293b;
-  padding:15px;
-  border-radius:12px;
-  text-align:center;
-}
-.big{
-  font-size:2rem;
-  color:#22c55e;
-  font-weight:800;
-}
-img{
-  width:100%;
-  border-radius:12px;
-  margin:20px 0;
-}
-.button{
-  display:inline-block;
-  background:#22c55e;
-  color:#000;
-  padding:12px 20px;
-  border-radius:8px;
-  font-weight:600;
-  margin-top:10px;
-}
-.collapsible{
-  background:#1e293b;
-  padding:15px;
-  border-radius:10px;
-  margin-top:10px;
-  cursor:pointer;
-}
-.content{
-  display:none;
-  padding-top:10px;
-}
-.nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:5px;
-  background:#22c55e;
-  transform-origin:left;
-}
-</style>
+        /* ACCORDION */
+        .accordion {
+            margin-top: 40px;
+        }
+        .acc-header {
+            background: #1a2a3f;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .acc-content {
+            display: none;
+            padding: 0 20px 24px;
+            background: #112233;
+            border-radius: 0 0 12px 12px;
+        }
+        .acc-open .acc-content { display: block; }
+
+        /* PROGRESS NAV */
+        .progress {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10,37,64,0.9);
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            display: flex;
+            gap: 12px;
+            z-index: 999;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #334455;
+            border-radius: 50%;
+        }
+        .dot.active { background: var(--green); }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #00cc88, #ff2e63);
+            color: white;
+            text-align: center;
+            padding: 80px 24px;
+            border-radius: 40px;
+            margin: 60px 24px;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+            section { max-width: 620px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="nav" id="progress"></div>
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <div style="font-size:1rem; letter-spacing:3px; opacity:0.8; margin-bottom:12px;">CONFIDENTIAL BRIEFING</div>
+            <h1>DEATH JUST<br>GOT PUNCHED<br>IN THE NUTS</h1>
+            <p>The protocol that actually reverses aging. Backed by real human trials, not bro-science. You’re about to feel 10–15 years younger.</p>
+            <button onclick="document.getElementById('overview').scrollIntoView({behavior:'smooth'})" class="cta-btn">SHOW ME THE WEAPONS →</button>
+        </div>
+        
+        <!-- floating stats -->
+        <div style="position:absolute; bottom:60px; left:24px; right:24px; background:rgba(10,15,28,0.85); border-radius:16px; padding:16px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; text-align:center;">
+            <div><div class="stat-number" data-count="4.6">0</div><div style="font-size:0.85rem;opacity:0.7;">years reversed</div></div>
+            <div><div class="stat-number" data-count="40">0</div><div style="font-size:0.85rem;opacity:0.7;">% less death</div></div>
+            <div><div class="stat-number" data-count="26">0</div><div style="font-size:0.85rem;opacity:0.7;">months younger</div></div>
+        </div>
+    </div>
 
-<!-- PAGE 1 -->
-<section class="hero">
-  <h1>You Are Slowly Dying.<br>Here’s How to Fight Back.</h1>
-  <p>This isn’t a wellness blog. This is the stuff that actually moves the needle.</p>
-</section>
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat"><span class="stat-number" data-count="2.6">0</span><br><small>FMD cycles</small></div>
+        <div class="stat"><span class="stat-number" data-count="30">0</span><br><small>% mortality drop</small></div>
+        <div class="stat"><span class="stat-number" data-count="80">0</span><br><small>% taurine drop fixed</small></div>
+        <div class="stat"><span class="stat-number" data-count="500">0</span><br><small>mg Urolithin A</small></div>
+    </div>
 
-<section>
-  <h2>The Brutal Truth</h2>
-  <p>Most guys don’t die from old age.</p>
-  <p>They die early… tired, inflamed, weak, and metabolically wrecked.</p>
+    <!-- OVERVIEW -->
+    <section id="overview">
+        <h2 class="section-title">The Protocol That Actually Works</h2>
+        <p style="font-size:1.25rem; text-align:center; max-width:360px; margin:0 auto 48px;">No pills that cost $400. No 72-hour fasts. Just three levers that human trials prove move the needle on biological age.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="badge">DIET</div>
+                <h3>Mediterranean + FMD</h3>
+                <p>2.6 years younger after 3 cycles. 20–30% lower death risk. Organic only or it’s worthless.</p>
+                <button onclick="this.parentElement.nextElementSibling.style.display='block'" style="margin-top:16px; background:transparent; border:2px solid #00cc88; color:#00cc88; padding:8px 20px; border-radius:999px; font-size:0.9rem;">DETAILS →</button>
+            </div>
+            
+            <div class="card">
+                <div class="badge">SUPPS</div>
+                <h3>GlyNAC + Urolithin A</h3>
+                <p>Human RCTs show mitochondrial function restored and inflammation crushed. The two that actually work.</p>
+            </div>
+            
+            <div class="card">
+                <div class="badge">LIFESTYLE</div>
+                <h3>Zone 2 + Sauna + Sleep</h3>
+                <p>40% lower all-cause death. VO2max is the single best predictor of how long you live.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="stats">
-    <div class="card"><div class="big">+10 yrs</div>Exercise</div>
-    <div class="card"><div class="big">+3 yrs</div>Fasting</div>
-    <div class="card"><div class="big">+4 yrs</div>Diet</div>
-    <div class="card"><div class="big">+2 yrs</div>Muscle</div>
-  </div>
+    <!-- DIETS -->
+    <section style="background:#0f1c2e;">
+        <h2 class="section-title" style="color:#00cc88;">The 3 Diets That Move the Clock Back</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>1. Mediterranean on Steroids</h3>
+                <p>Organic EVOO, wild fish, cruciferous everything. 20–30% lower all-cause mortality. Telomeres stay longer.</p>
+                <div style="margin-top:24px; font-size:0.9rem; opacity:0.8;">Action: Swap seed oils for olive oil today. Done.</div>
+            </div>
+            <div class="card">
+                <h3>2. Fasting-Mimicking (FMD)</h3>
+                <p>5 days low-cal plant-based every 1–3 months. 2.6 years biological age reversal in real humans.</p>
+                <div style="margin-top:24px; font-size:0.9rem; opacity:0.8;">Action: Start with 16:8 daily. Upgrade to FMD quarterly.</div>
+            </div>
+            <div class="card">
+                <h3>3. Methylation Power Plate</h3>
+                <p>Leafy greens + beets + berries. Combined with the others = 4.6 years younger in 8 weeks.</p>
+            </div>
+        </div>
+    </section>
 
-  <p style="margin-top:20px;">Stack these right, and you don’t just live longer — you stay dangerous longer.</p>
-</section>
+    <!-- SUPPS -->
+    <section>
+        <h2 class="section-title">The Only 10 Supplements Worth a Damn</h2>
+        <div class="card-grid" style="grid-template-columns:1fr;">
+            <div class="card"><span class="badge">#1</span><h3>GlyNAC</h3><p>Restores glutathione. Human trials reversed multiple aging hallmarks. 3–5g each daily.</p></div>
+            <div class="card"><span class="badge">#2</span><h3>Urolithin A</h3><p>Triggers mitophagy. Muscle endurance up, inflammation down. 500–1000mg Mitopure.</p></div>
+            <div class="card"><span class="badge">#3</span><h3>Omega-3 (2–4g EPA/DHA)</h3><p>Cardiolipin armor. Telomeres stay longer.</p></div>
+            <div class="card"><span class="badge">#4</span><h3>Taurine 3–6g</h3><p>80% drop with age fixed. Lifespan studies across species.</p></div>
+            <div class="card"><span class="badge">#5–10</span><h3>Spermidine • Creatine • CoQ10 • Khavinson Peptides • Mg • (NMN only if rich)</h3><p>The rest are support players.</p></div>
+        </div>
+    </section>
 
-<!-- PAGE 2 -->
-<section>
-  <h2>1. Eat Like You Give a Damn</h2>
-  <img src="https://source.unsplash.com/800x600/?healthy,meal" alt="Healthy meal">
+    <!-- LIFESTYLE -->
+    <section style="background:#0f1c2e;">
+        <h2 class="section-title" style="color:#00cc88;">The 3 Moves That Actually Change Your Biology</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Zone 2 Training</h3>
+                <p>80% of your cardio at “can still talk” pace. Best predictor of lifespan. 3–4x/week.</p>
+            </div>
+            <div class="card">
+                <h3>Sauna 4–7x/week</h3>
+                <p>15–20 min at 180°F+. 40% lower death risk. Sweats out the poison.</p>
+            </div>
+            <div class="card">
+                <h3>Glymphatic Sleep</h3>
+                <p>Cool room, no booze, mouth tape if you snore. Brain detox every night.</p>
+            </div>
+        </div>
+    </section>
 
-  <p><b>What it is:</b> Real food. Meat, fish, vegetables, olive oil. Minimal garbage.</p>
-  <p><b>Why it matters:</b> Bad food damages your mitochondria — your energy engines.</p>
-  <p><b>Gain:</b> ~3–5 extra years</p>
+    <!-- TOXIN SECTION -->
+    <section>
+        <h2 class="section-title">The Real Enemy: Modern Poison</h2>
+        <p style="text-align:center; font-size:1.1rem;">Glyphosate, seed oils, microplastics, and PFAS are quietly torching your mitochondria. Every protocol above is worthless if you keep eating trash and drinking plastic water.</p>
+        <div style="background:#1a2a3f; padding:32px; border-radius:20px; margin:40px 0; text-align:center;">
+            <p style="font-size:1.3rem; line-height:1.4;">Organic everything.<br>Filter your water.<br>Ditch seed oils forever.</p>
+            <div style="margin-top:24px; color:var(--accent); font-weight:700;">This is non-negotiable.</div>
+        </div>
+    </section>
 
-  <div class="collapsible">Simple move →</div>
-  <div class="content">Cut seed oils. Eat real food. Done.</div>
-</section>
+    <!-- TRACK -->
+    <section id="track" style="background:#112233;">
+        <h2 class="section-title">Track It or It’s Bullshit</h2>
+        <div class="card-grid">
+            <div class="card">DunedinPACE clock — every 6 months ($349)</div>
+            <div class="card">hs-CRP + HbA1c — every 3 months</div>
+            <div class="card">Omega-3 index + Glutathione — every 6 months</div>
+            <div class="card">VO2 max — every 6 months</div>
+        </div>
+    </section>
 
-<section>
-  <h2>2. Stop Eating All Day</h2>
-  <img src="https://source.unsplash.com/800x600/?fasting,focus" alt="Focused man">
+    <!-- FINAL CTA -->
+    <div class="final-cta">
+        <h2 style="font-size:2.8rem; line-height:1.1; margin-bottom:24px;">Ready to live like a man who refuses to die young?</h2>
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="cta-btn" style="background:white; color:#0a2540; font-size:1.4rem; padding:22px 52px;">START TODAY — NO EXCUSES</button>
+        <p style="margin-top:32px; opacity:0.85; font-size:1rem;">Forward this to your buddies. Real men share the good shit.</p>
+    </div>
 
-  <p><b>What it is:</b> 16-hour fasts + occasional 24-hour resets</p>
-  <p><b>Why it matters:</b> Turns on autophagy — your body cleans itself</p>
-  <p><b>Gain:</b> ~2–4 years</p>
+    <!-- PROGRESS DOTS -->
+    <div class="progress">
+        <div class="dot active" onclick="document.querySelector('.hero').scrollIntoView({behavior:'smooth'})"></div>
+        <div class="dot" onclick="document.getElementById('overview').scrollIntoView({behavior:'smooth'})"></div>
+        <div class="dot" onclick="document.querySelectorAll('section')[1].scrollIntoView({behavior:'smooth'})"></div>
+        <div class="dot" onclick="document.querySelectorAll('section')[3].scrollIntoView({behavior:'smooth'})"></div>
+    </div>
 
-  <div class="collapsible">Simple move →</div>
-  <div class="content">Skip breakfast. Eat in an 8-hour window.</div>
-</section>
+    <script>
+        // Count-up animation
+        function animateValue(el) {
+            const target = parseFloat(el.getAttribute('data-count'));
+            let start = 0;
+            const duration = 1800;
+            const step = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                start += step;
+                if (start >= target) {
+                    el.textContent = Math.round(target);
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.round(start);
+                }
+            }, 16);
+        }
 
-<!-- PAGE 3 -->
-<section>
-  <h2>3. Lift Heavy. Move Fast.</h2>
-  <img src="https://source.unsplash.com/800x600/?weightlifting" alt="Man lifting weights">
+        // Run count-ups when scrolled into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(n => {
+                        if (!n.dataset.animated) {
+                            animateValue(n);
+                            n.dataset.animated = 'true';
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.6 });
 
-  <p><b>What it is:</b> Strength + cardio combo</p>
-  <p><b>Why it matters:</b> Muscle = survival</p>
-  <p><b>Gain:</b> ~5–10 years</p>
+        document.querySelectorAll('.stats-bar, .hero').forEach(section => observer.observe(section));
 
-  <div class="collapsible">Simple move →</div>
-  <div class="content">Lift 3x/week. Walk daily. Sprint occasionally.</div>
-</section>
+        // Simple accordion for deeper cards (click any card with button)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.tagName === 'BUTTON') {
+                    const next = this.nextElementSibling;
+                    if (next && next.classList.contains('acc-content')) {
+                        next.style.display = next.style.display === 'block' ? 'none' : 'block';
+                    }
+                }
+            });
+        });
 
-<section>
-  <h2>4. Fix Your Internal Engine</h2>
-  <img src="https://source.unsplash.com/800x600/?supplements" alt="Supplements">
+        // Keyboard shortcut for fun
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && e.metaKey) {
+                document.getElementById('overview').scrollIntoView({behavior:'smooth'});
+            }
+        });
 
-  <p><b>Core stack:</b></p>
-  <ul>
-    <li>Magnesium</li>
-    <li>Creatine</li>
-    <li>Glycine</li>
-    <li>CoQ10</li>
-  </ul>
-
-  <p><b>Why:</b> Energy, recovery, cellular repair</p>
-
-  <div class="collapsible">Simple move →</div>
-  <div class="content">Start with magnesium + creatine. Add others later.</div>
-</section>
-
-<!-- PAGE 4 -->
-<section>
-  <h2>5. Stress Your Body (On Purpose)</h2>
-  <img src="https://source.unsplash.com/800x600/?sauna" alt="Sauna">
-
-  <p><b>What it is:</b> Sauna + cold exposure</p>
-  <p><b>Why:</b> Builds resilience at the cellular level</p>
-  <p><b>Gain:</b> ~2–5 years</p>
-
-  <div class="collapsible">Simple move →</div>
-  <div class="content">Sauna 3x/week. Cold showers after.</div>
-</section>
-
-<section>
-  <h2>6. Stop Poisoning Yourself</h2>
-  <img src="https://source.unsplash.com/800x600/?clean,water" alt="Clean water">
-
-  <p><b>The hidden killer:</b> toxins</p>
-  <ul>
-    <li>Processed food</li>
-    <li>Plastic exposure</li>
-    <li>Bad water</li>
-  </ul>
-
-  <div class="collapsible">Simple move →</div>
-  <div class="content">Filter water. Avoid plastic. Eat clean.</div>
-</section>
-
-<!-- PAGE 5 -->
-<section>
-  <h2>Track This or You're Guessing</h2>
-
-  <div class="card">HbA1c → Blood sugar</div>
-  <div class="card">CRP → Inflammation</div>
-  <div class="card">VO2 Max → Fitness</div>
-  <div class="card">DEXA → Muscle vs fat</div>
-
-  <p style="margin-top:15px;">If it’s not improving… your system isn’t working.</p>
-</section>
-
-<section style="text-align:center;">
-  <h2>Final Reality</h2>
-  <p>You don’t need 50 supplements.</p>
-  <p>You need discipline.</p>
-  <p><b>Do this for 6 months and you’ll feel like a different man.</b></p>
-
-  <div class="button">Start Now</div>
-</section>
-
-<script>
-// Scroll progress bar
-window.addEventListener('scroll',()=>{
-  let scrollTop=document.documentElement.scrollTop;
-  let height=document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  document.getElementById('progress').style.transform=`scaleX(${scrollTop/height})`;
-});
-
-// Collapsible sections
-document.querySelectorAll('.collapsible').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    let content=btn.nextElementSibling;
-    content.style.display = content.style.display==='block'?'none':'block';
-  });
-});
-</script>
-
+        console.log('%c✅ Protocol loaded. Now go punch death in the nuts.', 'color:#00cc88; font-family:monospace');
+    </script>
 </body>
 </html>
